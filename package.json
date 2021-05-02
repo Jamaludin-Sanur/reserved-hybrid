@@ -28,6 +28,7 @@
   "scripts": {
     "start": "reco serve",
     "build": "reco checkversion && react-scripts build && reco copy && cordova build",
+    "deploy:web": "pm2 serve ./build 3111 --name reserved-fronted",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eject": "react-scripts eject",
     "reactstart": "react-scripts start"
