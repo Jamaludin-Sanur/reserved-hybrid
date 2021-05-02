@@ -1,25 +1,35 @@
 import logo from './logo.svg';
+import LoginLayout from "./layout/LoginLayout";
+import MemberLayout from "./layout/MemberLayout";
 import './App.css';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+  
+  const AuthStore = props.AuthStore || {};
+  const token = AuthStore.tokenAPI;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        {token
+          ? <MemberLayout />
+          : <LoginLayout />
+        }
+      </Router>
     </div>
   );
 }
 
-export default App;
+const mapState = state => {
+  return {
+    AuthStore: state.AuthStore,
+  };
+};
+
+const mapDispatch = {}
+
+export default connect(mapState, mapDispatch)(App);

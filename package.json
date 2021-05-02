@@ -1,21 +1,36 @@
 {
-  "name": "reserved",
-  "version": "0.1.0",
+  "name": "com.test.challenge",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "clsx": "^1.1.1",
+    "moment": "^2.29.1",
+    "cordova_script": "^1.0.0",
     "react": "^17.0.2",
+    "react-browser-notifications": "^1.0.14",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react.cordova-navigation_controller": "^3.0.2",
+    "redux": "^4.1.0",
+    "redux-localstorage": "^0.4.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.1.3",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "reco serve",
+    "build": "reco checkversion && react-scripts build && reco copy && cordova build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eject": "react-scripts eject",
+    "reactstart": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +48,33 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "homepage": "./",
+  "displayName": "reserved",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "DataCyber-OrChuban, react.cordova: Apache Cordova Team and React.js",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^9.1.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-badge": "^0.8.8",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-local-notification": "^0.9.0-beta.2",
+    "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-local-notification": {}
+    },
+    "platforms": [
+      "browser",
+      "android"
     ]
   }
 }
